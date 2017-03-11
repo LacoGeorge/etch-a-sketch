@@ -3,10 +3,21 @@ var rows = 50;
 
 var canvasSize = 500;
 var pixSize = canvasSize / rows;
-
+var softMode = false;
 
 canvasInit();
 
+if (softMode)
+{
+
+}
+else
+{
+	$("body").on('mouseenter', '.pixel',function(){
+			console.log("hovering");
+			$(this).css("background-color","black");
+	});
+}
 
 function clearCanvas(){
 	$(".pixel").remove();
@@ -47,7 +58,3 @@ function canvasInit(){
 }
 
 
-$("body").on('mouseenter', '.pixel',function(){
-			console.log("hovering");
-			$(this).css("background-color","black");
-});
