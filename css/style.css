@@ -1,0 +1,10 @@
+div.pixel {
+	height: 50px;
+	width: 50px;
+	margin: 1px auto;
+	background-color: black;
+}
+
+body {
+    background-color: lightblue;
+}
