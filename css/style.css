@@ -2,6 +2,9 @@
 	    overflow: hidden;
 	    line-height: 0px;
 	    margin: 0px auto 50px;
+	    border: 10px solid green;
+	    border-radius: 10px;
+	    background-color: green;
 	}
 
 h1 {

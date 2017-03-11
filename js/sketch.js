@@ -1,7 +1,8 @@
-var pixSize = 5;
-var rows = 50;
-var columns = 50;
 
+var rows = 50;
+
+var canvasSize = 500;
+var pixSize = canvasSize / rows;
 
 
 canvasInit();
@@ -22,21 +23,20 @@ function clearCanvas(){
 	}
 
 	rows = newrows;
-	columns = rows;
+
 
 	canvasInit();
 
 }
 
 function canvasInit(){
-	$(".wrapper").height(rows*pixSize);
-	$(".wrapper").width(columns*pixSize);
-
-	
+	$(".wrapper").height(canvasSize);
+	$(".wrapper").width(canvasSize);
+	pixSize = canvasSize / rows;
 	for (var i = 0; i<rows; i++)
 	{
 
-		for (var j= 0; j<columns; j++)
+		for (var j= 0; j<rows; j++)
 		{
 			$(".wrapper").append('<div class="pixel pix' + i + 'x' + j + '"></div>');
 		}
