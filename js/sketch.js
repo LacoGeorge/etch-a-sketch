@@ -3,21 +3,26 @@ var rows = 50;
 
 var canvasSize = 500;
 var pixSize = canvasSize / rows;
-var softMode = false;
+var softMode = true;
 
 canvasInit();
 
-if (softMode)
-{
 
-}
-else
-{
-	$("body").on('mouseenter', '.pixel',function(){
-			console.log("hovering");
-			$(this).css("background-color","black");
-	});
-}
+$("body").on('mouseenter', '.pixel',function(){
+
+	if(softMode)
+	{
+		console.log("soft hovering");
+		$(this).css("opacity","+=0.1");
+	}
+	else
+	{
+		console.log("hard hovering");
+		$(this).css("opacity","1");
+	}
+
+});
+
 
 function clearCanvas(){
 	$(".pixel").remove();
@@ -57,4 +62,17 @@ function canvasInit(){
 	$(".pixel").width(pixSize);
 }
 
+function softModeToggle(){
+	if (softMode){
+		softMode = false;
+		$(".softModeButton").text("Soft Mode is OFF");
+	}
+	else
+	{
+		softMode = true;
+		$(".softModeButton").text("Soft Mode is ON");
+
+	}
+	console.log("Value of softMode: " + softMode);
+}
 
